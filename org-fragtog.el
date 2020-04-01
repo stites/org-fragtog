@@ -35,6 +35,7 @@
 ;;; Code:
 
 (require 'org)
+(require 'texfrag)
 
 ;;;###autoload
 (define-minor-mode org-fragtog-mode
@@ -104,7 +105,7 @@ If there is none, return nil."
   (save-excursion
     (goto-char (car
 		(org-fragtog--frag-pos frag)))
-    (org-latex-preview)))
+    (preview-at-point)))
 
 (defun org-fragtog--disable-frag (frag)
   "Disable the org latex fragment preview for the fragment FRAG."
